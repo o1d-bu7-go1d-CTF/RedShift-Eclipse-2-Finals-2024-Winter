@@ -1,0 +1,46 @@
+/* Общие стили для страницы */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.appointment-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.appointment-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-info {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.appointment-info p {
+    margin-bottom: 15px;
+}
+
+.appointment-info strong {
+    font-weight: 600;
+}
+
+/* Кнопка отмены записи */
+.btn-cancel {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background-color: #d32f2f;
+}

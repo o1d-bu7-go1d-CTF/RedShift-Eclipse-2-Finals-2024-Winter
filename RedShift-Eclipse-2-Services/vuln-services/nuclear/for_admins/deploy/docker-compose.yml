@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  reactor-service:
+    build:
+      context: .
+    ports:
+      - "9000:12345"
+    volumes:
+      - ./reactor_state.dat:/service/reactor_state.dat
+      - ./reactor_users.db:/service/reactor_users.db
+    restart: unless-stopped

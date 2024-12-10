@@ -1,0 +1,80 @@
+/* Основные стили для улучшения визуализации */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Скругление углов карточки */
+    background-color: #ffffff; /* Белый фон карточки */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Легкий подъем карточки */
+    box-shadow: 0 12px 24px rgba(0, 128, 0, 0.2); /* Тень с зеленым оттенком при наведении */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #28a745; /* Зеленый цвет для имени врача */
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+}
+
+.card-footer .btn {
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Изменение цвета кнопки при наведении */
+.card-footer .btn:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Цвет для заголовков врачей */
+.text-success {
+    color: #28a745 !important;
+}
+
+/* Место для изображения */
+.doctor-image {
+    background-color: #e9f7e7; /* Светло-зеленый фон для изображения */
+    height: 200px; /* Фиксированная высота для изображения */
+    overflow: hidden; /* Обрезаем изображение, выходящее за границы */
+    border-bottom: 2px solid #dee2e6;
+}
+
+.doctor-image img {
+    width: 100%; /* Изображение заполняет ширину контейнера */
+    height: 100%; /* Изображение заполняет высоту контейнера */
+    object-fit: cover; /* Сохраняем пропорции изображения и обрезаем лишнее */
+    object-position: center; /* Центрируем изображение */
+    border-radius: 10px 10px 0 0; /* Скругляем верхние углы изображения */
+}
+
+
+/* Анимация для карточки */
+.doctor-card {
+    transition: all 0.3s ease;
+}
+
+.doctor-card:hover {
+    background-color: #f1f9f1; /* Легкое изменение фона при наведении */
+    box-shadow: 0 8px 25px rgba(0, 128, 0, 0.3); /* Яркая тень с зеленым оттенком */
+    transform: scale(1.05); /* Увеличение карточки при наведении */
+}
+
+.card-body p {
+    margin-bottom: 10px;
+}

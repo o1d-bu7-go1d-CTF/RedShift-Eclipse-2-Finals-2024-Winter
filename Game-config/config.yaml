@@ -1,0 +1,82 @@
+eventname: RedShift.Eclipse 2 Finals
+game:
+  gap: 120     # Количество секунд между раундами
+  rounds: 20   # Количество раундов
+  scores:      # Раздел с очками для каждого отдельного сервиса
+    keeyb:
+      all_service_down: -60
+      checkers:
+        DOWN: -15
+        ERROR: 0
+        OK: 10
+      sploits:
+        ERROR: 0
+        NVULN: 10
+        VULN: -30
+    medok:
+      all_service_down: -60
+      checkers:
+        DOWN: -15
+        ERROR: 0
+        OK: 10
+      sploits:
+        ERROR: 0
+        NVULN: 10
+        VULN: -30
+    nuclear:
+      all_service_down: -60
+      checkers:
+        DOWN: -15
+        ERROR: 0
+        OK: 10
+      sploits:
+        ERROR: 0
+        NVULN: 15
+        VULN: -30
+  service_reputation: 10000
+helper:     # Раздел с именами вспомогательных скриптов (разделения по сервисам не нужно)
+  scripts-names:
+    1: keeyb_checker__helper
+    2: keeyb_sploit__helper
+    3: medok_checker__helper
+    4: medok_sploit__helper
+scenario:    # Основной сценарий, где для каждого сервиса определены checkers и sploits
+  keeyb:
+    checkers:
+      1: keeyb/checkers/keeyb_checker__auth.py
+      2: keeyb/checkers/keeyb_checker__training.py
+    sploits:
+      1: keeyb/sploits/keeyb_sploit__rce.py
+      2: keeyb/sploits/keeyb_sploit__ssti.py
+  medok:
+    checkers:
+      1: medok/checkers/medok_checker__appointments.py
+      2: medok/checkers/medok_checker__doctors.py
+      3: medok/checkers/medok_checker__services.py
+    sploits:
+      1: medok/sploits/medok_sploit__idor.py
+      2: medok/sploits/medok_sploit__rce.py
+      3: medok/sploits/medok_sploit__sqli.py
+      4: medok/sploits/medok_sploit__ssti.py
+  nuclear:
+    checkers:
+      1: nuclear/checkers/nuclear_checker__auth.py
+      2: nuclear/checkers/nuclear_checker__database.py
+      3: nuclear/checkers/nuclear_checker__functions.py
+      4: nuclear/checkers/nuclear_checker__reactor.py
+    sploits:
+      1: nuclear/sploits/nuclear_sploit__overflow.py
+      2: nuclear/sploits/nuclear_sploit__reactor.py
+      3: nuclear/sploits/nuclear_sploit__user.py
+services:   # Набор сервисов и используемые порты под эти сервисы
+  keeyb: 8000
+  medok: 5000
+  nuclear: 9000
+teams:    # Набор команд с их IP-адресами
+  Capybaras: 10.1.1.4
+  m0Th3rH4ck3rS: 10.1.1.20
+  name: 10.1.1.36
+  PunchClub: 10.1.1.52
+  kks: 10.1.1.68
+  ZelBorSecurity: 10.1.1.84
+  MHC: 10.1.1.100

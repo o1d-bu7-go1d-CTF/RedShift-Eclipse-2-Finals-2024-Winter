@@ -1,0 +1,24 @@
+
+{% extends 'base_template.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Welcome, {{ user }}!</h2>
+        <p>You are now logged in!</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<p>
+        
+        <br><br>
+        
+        <form method="post" action="/?action=profile">
+            <input type="hidden" name="command" value="date">
+            <button class="btn" type="submit"><b>Get Current Time</b></button>
+        </form>
+
+        <br><br>
+
+        {% if time %}
+            <p>Current Time: {{ time }}</p>
+        {% endif %}
+    </div>
+{% endblock %}

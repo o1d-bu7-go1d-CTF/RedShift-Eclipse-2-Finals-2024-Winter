@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvoidAttack | Defense CTF</title>
+    <link id="favicon" type="image/x-icon" href="../static/images/favicon.png" rel="icon">
+    <link href="../static/css/rules.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <p>Rules</p>
+            <p>{{ event_name }} Defense CTF</p>
+        </div>
+
+        <div class="titleText__horizontal">
+            <div class="container_bottom">
+                <div class="flow">
+                    <div class="title-container">
+                        <h3>Формат проведения</h3>
+                        <p><b class="disallow">Формат соревнования</b>: каждая команда участников до 4 человек защищает свои сервисы, которые атакуют боты проверяющей платформы</p>
+                    </div>
+                    <br><br>
+
+                    <div class="list-container">
+                        <h3>Глоссарий</h3>
+                        <ul class="rules">
+                            <li><b class="allow">Инфраструктура</b>: Организаторы предоставляют каждой команде одинаковую инфраструктуру, которую команды должны защищать</li>
+                            <li><b class="allow">Сервисы</b>: На VM каждой команды располагается ряд сервисов, каждый из которых содержит в себе заложенные уязвимости</li>
+                            <li><b class="allow">Защита</b>: Командам необходимо защищать свои сервисы от атак ботов, устраняя уязвимости</li>
+                            <li><b class="allow">Атака</b>: Атаки производят боты (скрипты) проверяющей платформы</li>
+                            <li><b class="allow">Скоринг</b>: Очки начисляются за успешную защиту своих сервисов, учитывается работоспособность сервисов и их компонентов</li>
+                        </ul>
+                        <h3>Условные обозначения</h3>
+                        <ul class="rules">
+                            <li>&#128512; <b class="allow">(Checker return a success state)</b> - чекер выполнил проверку сервиса успешно</li>
+                            <li>&#128532; <b class="disallow">(Checker return a fail state)</b> - чекер обнаружил проблему на сервисе, т.е. какой-то из компонентов сервиса работает некорректно</li>
+                            <li>&#128164; <b class="allow">(Сhecker return an error state)</b> - чекер не проверил функциональность по причине поломки проверяющего скрипта</li>
+                            <li>&#128520; <b class="disallow">(Sploit return a success state)</b> - на сервисе успешно проэксплуатировала уязвимость</li>
+                            <li>&#128526; <b class="allow">(Sploit return a fail state)</b> - уязвимость не смогла быть воспроизведена на сервисе</li>
+                            <li>&#128165; <b class="allow">(Sploit return an error state)</b> - уязвимость не проверена про причине поломки проверяющего скрипта</li>
+                            <li>&#128128; <b class="disallow">(Service is down)</b> - сервис мертв, т.е. сервис не прошел проверку ни одного из чекеров в рамках одного раунда</li>
+                        </ul>
+                        <h3>SLA</h3>
+                        <ul class="rules">
+                            <li><b class="allow">SLA (Service Level Agreement)</b> - процент, получаемый по определенной формуле, обозначающий средний показатель жизни определенного сервиса команды - <b>количество прошедших игровых раундов, которые сервис провёл со статусом checker success / количество прошедших раундов</b></li>
+                            <p><b>sla = (a / (b * N)) * 100</b>, где</p>
+                            <p><b>a</b> - количество успешых sc для конкретного сервиса отдельной команды</p>
+                            <p><b>b</b> - общее количество чекеров для отдельного сервиса</p>
+                            <p><b>N</b> - количество прошедших раундов</p>
+                            <p><b>100</b> - для подсчета в процентах</p>
+                            <p><b>b * N</b> - означает под собой SLA в 100%</p>
+                        <h3>Технические ограничения</h3>
+                        <ul class="rules">
+                            <li><b class="disallow">Запрещается</b> DDoS, атаки на физическую инфраструктуру или сетевую инфраструктуру за пределами предоставленных машин и контейнеров</li>
+                            <li>Командам <b class="allow">разрешается</b> изменять, добавлять или удалять любое программное обеспечение на своих машинах, если это не нарушает работу скоринговой системы или другие правила</li>
+                            <li>Командам <b class="disallow">запрещается</b> атаковать другие команды, даже в случае, если при атаках не происходит деструктива</li>
+                            <li>Использование средств мониторинга трафика <b class="allow">разрешено</b>, если это не нарушает другие правила соревнований</li>
+                            <li><b class="disallow">Запрещается</b> использование сторонних WAF и других подобных сторонних инструментов и систем, которые способны фильтровать трафик</li>
+                        </ul>
+                        <h3>Этические и поведенческие правила</h3>
+                        <ul class="rules">
+                            <li><b class="allow">Уважение</b>: Участники должны с уважением относиться к другим командам, судьям и организаторам соревнований</li>
+                            <li><b class="allow">Честная игра</b>: Не допускается предоставление ложной информации организаторам или попытки обмануть судей и систему оценки</li>
+                            <li><b class="allow">Конфиденциальность</b>: Команды не должны раскрывать найденные уязвимости до окончания соревнования.</li>
+                        </ul> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="button-arounder"><a href="/scoreboard?sort_by=total_scores&order=desc">Scoreboard</a></button>
+            <button class="button-arounder"><a href="/">Back to Home</a></button>
+        </div>
+
+        <div class="confirm">
+            <p>(Переходя во вкладку scoreboard, вы подтверждаете ознакомление и согласие со всеми правилами игры)</p>
+        </div>
+    </div>
+    <br><br>
+    <footer>
+        <p>&copy; {{ year }} <b class="event-footer">{{ event_name }}</b>. Все права защищены.</p>
+        <p>Made with &#129505; by <b class="team">o1d_bu7_go1d</b> Team</p>
+    </footer>
+</body>
+</html>

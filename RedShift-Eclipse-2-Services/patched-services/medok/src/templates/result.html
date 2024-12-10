@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Подключение кастомных стилей -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+
+<!-- Текст результата -->
+<div class="result-container text-center">
+    <h1 class="result-message">{{ message }}</h1>
+</div>
+{% endblock %}

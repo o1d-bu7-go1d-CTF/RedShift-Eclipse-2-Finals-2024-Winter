@@ -1,0 +1,17 @@
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    text-align: center;
+}
+
+.result-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2f8f2f;
+    padding: 20px;
+    border: 2px solid #2f8f2f;
+    border-radius: 10px;
+    background-color: #f6fff6;
+}

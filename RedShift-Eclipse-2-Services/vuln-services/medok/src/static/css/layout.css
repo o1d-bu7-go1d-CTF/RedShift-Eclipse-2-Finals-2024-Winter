@@ -1,0 +1,81 @@
+/* Основные стили для всех страниц */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f9f3;
+    color: #2c6b3f;
+    margin: 0;
+    padding: 0;
+}
+
+/* Навигационная панель */
+.navbar {
+    background-color: #7fbf7f;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navbar-brand:hover {
+    color: #f0ad4e;
+}
+
+.nav-link {
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+    background-color: #003f00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+/* Стили для кнопок */
+.btn-primary {
+    background-color: #7fbf7f;
+    border-color: #7fbf7f;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #6dbf6d;
+    transform: scale(1.05);
+}
+
+.btn-contact {
+    color: #4e9f4e !important;
+    border: 2px solid #4e9f4e;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-contact:hover {
+    background-color: #4e9f4e;
+    color: #ffffff !important;
+    border-color: #4e9f4e;
+}
+
+/* Контактный раздел */
+.bg-light {
+    background-color: #e7f5e5 !important;
+    padding: 50px 0;
+}
+
+.container.text-center h2 {
+    color: #2c6b3f;
+}
+
+.container.text-center p {
+    font-size: 1.2rem;
+    color: #4b8f68;
+}

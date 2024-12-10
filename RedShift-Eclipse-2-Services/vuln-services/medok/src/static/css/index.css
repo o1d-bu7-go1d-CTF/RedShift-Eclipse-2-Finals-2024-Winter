@@ -1,0 +1,106 @@
+/* Главный блок приветствия */
+.welcome-banner {
+    background-color: #a8dca1;
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-banner h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.welcome-banner p {
+    font-size: 1.5rem;
+}
+
+.welcome-banner a {
+    background-color: #6dbf6d;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.welcome-banner a:hover {
+    background-color: #4e9f4e !important;
+}
+
+/* Карточки на главной странице */
+.card-img-top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-wrapper {
+    background-color: #eaf4e3;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    height: 100%;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    background-color: #eaf4e3;
+    border-radius: 0 0 15px 15px;
+    padding: 20px;
+}
+
+.card-title {
+    color: #2c6b3f !important;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #4b8f68;
+}
+
+/* Раздел с преимуществами */
+
+.row.text-center {
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.container.py-5 {
+    background-color: #a8dca1;
+    border-radius: 15px;
+    padding: 40px 0;
+}
+
+.feature-block {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.feature-block h4 {
+    color: #2c6b3f;
+    font-weight: bold;
+}
+
+.feature-block p {
+    color: #4b8f68;
+}
+
+.feature-block i {
+    font-size: 2rem;
+    margin-right: 10px;
+}

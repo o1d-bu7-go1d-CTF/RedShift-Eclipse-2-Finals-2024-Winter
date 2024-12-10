@@ -1,0 +1,70 @@
+body {
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+}
+
+.text-center h1 {
+    color: #66b466; /* Салатовый */
+    font-weight: bold;
+}
+
+.text-center p {
+    color: #9cdb9c; /* Нежно-салатовый */
+    font-size: 1.2rem;
+}
+
+.py-5 {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+
+/* Форма */
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+/* Поля формы */
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f7f6;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #66b466;
+    outline: none;
+    box-shadow: 0 0 5px rgba(102, 180, 102, 0.5);
+}
+
+/* Кнопка отправки */
+button[type="submit"] {
+    background-color: #66b466;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #539e53;
+}

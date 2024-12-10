@@ -1,0 +1,128 @@
+/* Общие стили страницы услуг */
+body {
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+}
+
+.text-center h1 {
+    color: #66b466; /* Светлый салатовый для заголовка */
+    font-weight: bold;
+}
+
+.text-center p {
+    color: #9cdb9c; /* Нежно-салатовый для описания */
+    font-size: 1.2rem;
+}
+
+/* Стилизация карточек */
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 8px 8px 0 0;
+    object-fit: cover;
+    height: 200px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #66b466 !important; /* Салатовый цвет заголовков */
+}
+
+.card-text {
+    color: #6c757d;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+/* Стилизация формы обратной связи */
+form {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+form h2 {
+    color: #66b466; /* Салатовый для заголовка */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+form p {
+    color: #9cdb9c; /* Нежно-салатовый для описания */
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Стилизация полей ввода */
+input[type="text"],
+input[type="tel"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f7f6;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #66b466;
+    outline: none;
+    box-shadow: 0 0 5px rgba(102, 180, 102, 0.5);
+}
+
+/* Стилизация кнопки отправки */
+button[type="submit"] {
+    background-color: #66b466;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #539e53;
+}
+
+/* Стилизация для мобильных устройств */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}

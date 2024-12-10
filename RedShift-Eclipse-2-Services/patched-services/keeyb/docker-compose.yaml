@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  keeybgallery-web:
+    build:
+      context: ./src
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8000:80"
+    depends_on:
+      -  keeybgallery-db
+
+  keeybgallery-db:
+    image: mysql:8.0-debian
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    restart: always
+    volumes:
+      - ./src/sql/db.sql:/docker-entrypoint-initdb.d/init.sql

@@ -1,0 +1,38 @@
+{% extends 'base_template.twig' %}
+
+{% block link %}
+    <link href="/static/css/keyboard.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/keyboard.js" defer></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Training</h2>
+
+        <p>Сделали небольшой интерактив - можно понажимать кнопки и текст будет сгенерирован, но пока не все буквы доступны!</p>
+
+        <br><br>
+
+        <!-- Поле для ввода текста -->
+        <form action="/?action=render" method="post">
+            <input type="text" id="inputField" name="user_input" placeholder="Type something..." required>
+            <button class="submit-button" type="submit"><b>Submit</b></button>
+
+            <!-- Кнопка для очистки содержимого iframe -->
+            <button class="clear-button" id="clearButton"><b>Clear Text</b></button>
+        </form>
+
+        <br><br>
+
+        <div class="keebs-container">
+            <span><i>K</i></span>
+            <span><i>E</i></span>
+            <span><i>Y</i></span>
+            <span><i>B</i></span>
+            <span><i>O</i></span>
+            <span><i>A</i></span>
+            <span><i>R</i></span>
+            <span><i>D</i></span>
+        </div>
+    </div>
+{% endblock %}

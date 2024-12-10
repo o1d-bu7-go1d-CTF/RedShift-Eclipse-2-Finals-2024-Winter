@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/view_appointment.css') }}">
+
+<div class="container py-4">
+    <div class="appointment-header">
+        <h1>Запись к врачу</h1>
+        <p>МедОК - ваш надежный помощник в медицинских услугах</p>
+    </div>
+    
+    <div class="appointment-details">
+        <h2>Информация о записи</h2>
+        <div class="appointment-info">
+            <p><strong>Специализация врача:</strong> {{ appointment['specialization'] }}</p>
+            <p><strong>Врач:</strong> {{ appointment['doctor_name'] }}</p>
+            <p><strong>Дата и время:</strong> {{ appointment['datetime'] }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

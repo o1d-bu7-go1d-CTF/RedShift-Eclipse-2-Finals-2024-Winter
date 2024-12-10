@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Shop Gallery</title>
+    <link id="favicon" type="image/x-icon" href="/static/images/favicon.png" rel="icon">
+    <link href="/static/css/login_register.css" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div>
+        <form method="post">
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <h1>Login</h1>
+
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Email or Phone" id="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+
+            <button type="submit">Login</button>
+
+            <div class="form-footer">No account? - <a class="form-footer-link" href="/?action=register">Register now</a></div>
+        </form>
+    </div>    
+</body>
+

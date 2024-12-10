@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Подключаем кастомные стили для страницы услуг -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+
+<!-- Заголовок страницы -->
+<div class="text-center py-5">
+    <h1 class="display-4 text-salad">Наши Услуги</h1>
+    <p class="lead text-salad">Мы предлагаем широкий спектр медицинских услуг, которые помогут вам заботиться о своем здоровье.</p>
+</div>
+
+<!-- Сеточный макет для услуг -->
+<div class="container py-5">
+    <div class="row g-4">
+        <!-- Услуга 1 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/diagnostika.webp" class="card-img-top" alt="Услуга 1">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Диагностика</h5>
+                    <p class="card-text">Наши специалисты проводят полное обследование для выявления заболеваний на ранних стадиях.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Услуга 2 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/hirurgiya.webp" class="card-img-top" alt="Услуга 2">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Хирургия</h5>
+                    <p class="card-text">Мы предлагаем квалифицированную хирургическую помощь по множеству направлений.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Услуга 3 -->
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/consultatsiya.jpg" class="card-img-top" alt="Услуга 3">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Консультации</h5>
+                    <p class="card-text">Наши врачи всегда готовы предоставить профессиональные консультации по всем вопросам здоровья.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Дополнительные услуги -->
+    <div class="row g-4 mt-5">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/terapiya.jpg" class="card-img-top" alt="Услуга 4">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Терапия</h5>
+                    <p class="card-text">Персонализированное лечение заболеваний и профилактика хронических болезней.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/stomatologiya.webp" class="card-img-top" alt="Услуга 5">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Стоматология</h5>
+                    <p class="card-text">Профессиональная помощь в лечении зубов и профилактике заболеваний полости рта.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <img src="/static/img/services/psihologiya.jpg" class="card-img-top" alt="Услуга 6">
+                <div class="card-body">
+                    <h5 class="card-title text-salad">Психология</h5>
+                    <p class="card-text">Профессиональные психологи и психотерапевты, которые помогут справиться с трудностями.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Форма обратной связи -->
+<div class="container mt-5">
+    <div class="text-center">
+        <h1 class="display-5 text-salad">Остались вопросы или не нашли нужную услугу?</h1>
+        <p class="lead text-salad">Напишите нам, и мы проконсультируем вас по интересующему вопросу!</p>
+        
+        <form id="contactForm" action="{{ url_for('main.ticket') }}" method="POST">
+            <!-- Поле для имени -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="name" name="name"
+                    value="{{ name }}" readonly>
+            </div>
+
+            <!-- Поле для телефона -->
+            <div class="mb-3">
+                <label for="phone" class="form-label">Номер телефона</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+
+            <!-- Поле для сообщения -->
+            <div class="mb-3">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

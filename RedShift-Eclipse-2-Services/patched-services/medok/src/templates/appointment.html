@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- Подключение кастомных стилей -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/appointment.css') }}">
+
+<!-- Заголовок страницы -->
+<div class="text-center py-5">
+    <h1 class="display-4 text-salad">Запись на приём</h1>
+    <p class="lead text-salad">Заполните форму ниже, чтобы выбрать удобное время и врача для вашего визита.</p>
+</div>
+
+<!-- Форма записи на приём -->
+<div class="container py-5">
+    <form action="{{ url_for('main.process_appointment') }}" method="POST" id="appointmentForm">
+        <!-- Имя пациента -->
+        <div class="mb-3">
+            <label for="name" class="form-label">Ваше имя</label>
+            <input type="text" class="form-control" id="name" name="name" 
+                value="{{ name }}" readonly>
+        </div>
+
+        <!-- Номер телефона -->
+        <div class="mb-3">
+            <label for="phone" class="form-label">Номер телефона</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Введите номер телефона">
+        </div>
+
+        <!-- Выбор врача -->
+        <div class="mb-3">
+            <label for="doctor" class="form-label">Выберите врача</label>
+            <select class="form-select" id="doctor" name="doctor">
+                <option value="" disabled selected>Выберите врача</option>
+                {% for doctor in doctors_list %}
+                <option value="{{ doctor['id'] }}" {% if selected_doctor and doctor['id'] == selected_doctor['id'] %}selected{% endif %}>
+                    {{ doctor['full_name'] }} ({{ doctor['specialization'] }})
+                </option>                
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Дата и время приёма -->
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="date" class="form-label">Выберите дату</label>
+                <input type="date" class="form-control" id="date" name="date">
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="time" class="form-label">Выберите время</label>
+                <input type="time" class="form-control" id="time" name="time">
+            </div>
+        </div>
+
+        <!-- Комментарий -->
+        <div class="mb-3">
+            <label for="message" class="form-label">Комментарий (необязательно)</label>
+            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Ваши пожелания или уточнения"></textarea>
+        </div>
+
+        <!-- Кнопка отправки -->
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Записаться</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

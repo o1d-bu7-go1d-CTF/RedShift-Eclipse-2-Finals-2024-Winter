@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+:root {
+    --color-1: #ffffff;
+    --color-2: #0f0932;     /* Main Background Color */
+    --color-3: #0000ff;
+    --color-4: #000000;
+    --color-5: #7203f6;
+    --color-6: #bfff00;
+    --color-7: #ff0000;
+    --color-8: #6600ff;
+    --color-9: #ffa500;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: var(--color-4);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-8);
+    border-radius: 5px;
+    border: 3px solid var(--color-4);
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    font-family: degular, sans-serif;
+    color: var(--color-1);
+    background-color: var(--color-2);
+    text-align: center;
+    font-size: 1.5rem;
+}
+  
+.titleText__horizontal {
+    margin: 120px auto 0;
+    max-width: 960px;
+    border-left: 1px solid var(--color-3);
+    padding: 0 32px;
+}
+  
+.titleText__horizontal h2 {
+    flex-basis: 50%;
+    width: 30%;
+    letter-spacing: 0;
+    padding-right: 10%;
+    text-align: left;
+    margin-top: 0;
+    line-height: 1;
+}
+  
+.titleText__horizontal {
+    text-align: left;
+    flex-basis: 50%;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+}
+  
+.container {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.list-container {
+    text-align: justify;
+}
+
+h3 {
+    align-items: center;
+    text-align: center;
+    color: var(--color-3);
+}
+
+.rules {
+    list-style-type: square;
+}
+
+.allow {
+    color: var(--color-6);
+}
+
+.disallow {
+    color: var(--color-7);
+}
+
+.title-container {
+    text-align: center;
+}
+  
+.title {
+    position: relative;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 8rem;
+    font-weight: 700;
+    letter-spacing: -0.8rem;
+    padding-top: 0;
+    height: 100%;
+    margin-bottom: 8rem;
+}
+  
+.title > p {
+    margin: 0;
+    line-height: 10rem;
+    width: auto;
+}
+  
+.title > p:nth-child(1) {
+    align-self: flex-start;
+}
+  
+.title > p:nth-child(2) {
+    color: var(--primary_text);
+    align-self: flex-end;
+}
+  
+.title > p:nth-child(3) {
+    align-self: flex-end;
+}
+ 
+.buttons-container {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+button {
+    background: var(--color-1);
+    border: solid 2px var(--color-4);
+    padding: .375em 1.125em;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+  
+.button-arounder {
+    font-size: 2rem;
+    background: var(--color-3);
+    color: hsl(190deg, 10%, 95%);
+    box-shadow: 0 0px 0px hsla(190deg, 15%, 5%, .2);
+    transform: translateY(0);
+    border-radius: 6px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-1);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--color-4);
+}
+
+footer {
+    border-top: 2px solid var(--color-3);
+    background-color: var(--color-2);
+    color: var(--color-1);
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.event-footer {
+    color: var(--color-6);
+}
+
+.team {
+    color: var(--color-5);
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 2rem;
+    }
+}
+
+@media (min-width: 1000px) {
+    .titleText__horizontal {
+      padding: 0 0 0 16px;
+      width: 60vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .title {
+      font-size: 4rem;
+      z-index: 1;
+    }
+    
+    .title > p {
+      line-height: 5rem;
+      letter-spacing: -0.3rem;
+    }
+}

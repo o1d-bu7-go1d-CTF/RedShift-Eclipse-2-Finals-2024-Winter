@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+<div class="container py-4">
+    <div class="profile-header">
+        <h1>Добро пожаловать, {{ name }}!</h1>
+        <p>МедОК - ваш надежный помощник в медицинских услугах</p>
+    </div>
+    <div class="profile-content d-flex">
+        <div class="profile-card tickets-section">
+            <h2>Ваши заявки</h2>
+            {% if tickets %}
+                <ul class="tickets-list">
+                    {% for ticket in tickets %}
+                        <li>
+                            <a href="{{ url_for('static', filename=ticket['path']) }}" target="_blank">
+                                {{ ticket['name'] }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас нет созданных заявок.</p>
+            {% endif %}
+        </div>
+        <div class="profile-card appointments-section">
+            <h2>Ваши записи</h2>
+            {% if appointments %}
+                <ul class="appointments-list">
+                    {% for appointment in appointments %}
+                        <li>
+                            <a href="{{ url_for('main.view_appointment', user_id=user_id, appointment_id=appointment['id']) }}">
+                                Запись ({{ appointment['specialization'].lower() }}) на {{ appointment['datetime'] }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>У вас нет записей на прием.</p>
+            {% endif %}
+        </div>
+        <div class="profile-card">
+            <h2>Личная информация</h2>
+            <div class="profile-info">
+                <div class="mb-2">
+                    <strong>Имя: {{ name }}</strong>
+                </div>
+                <div class="mb-2">
+                    <strong>Email: {{ email }}</strong>
+                </div>
+            </div>
+            <a href="{{ url_for('main.logout') }}" class="btn-custom">Выйти</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

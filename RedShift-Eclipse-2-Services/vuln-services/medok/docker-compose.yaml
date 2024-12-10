@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  medok-mysql:
+    image: mysql:8.0-debian
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: app
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: xxXX2244
+    ports:
+      - "3306:3306"
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      retries: 5
+      timeout: 10s
+      start_period: 30s
+      interval: 10s
+
+  medok-app:
+    build:
+      context: .
+      dockerfile: src/docker/Dockerfile
+    depends_on:
+      medok-mysql:
+        condition: service_healthy
+    environment:
+      DB_HOST: medok-mysql
+      DB_USER: admin
+      DB_PASSWORD: xxXX2244
+      DB_NAME: app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+
+volumes: {}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <div class="text-center">
+        <h1 style="color: #2f6d46; font-weight: bold;">Ваша заявка успешно отправлена</h1>
+        <h2 style="color: #2f6d46; font-weight: bold;">Вы можете просмотреть свои заявки в личном кабинете!</h2>
+        <a href="{{ url_for('main.services') }}" class="btn btn-success mt-4">Вернуться обратно</a>
+    </div>
+</div>
+{% endblock %}

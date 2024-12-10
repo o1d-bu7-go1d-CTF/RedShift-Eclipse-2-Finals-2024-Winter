@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+
+<!-- Главный заголовок с фоном -->
+<div class="text-center py-5 welcome-banner">
+    <h1 class="display-4">Добро пожаловать в МедОК!</h1>
+    <p class="lead">Мы предоставляем лучшие медицинские услуги для вашего здоровья.</p>
+    <a href="/services" class="btn btn-light btn-lg shadow">Посмотреть услуги</a>
+</div>
+<br>
+<!-- Раздел с текстами -->
+<div class="container py-5 custom-container">
+    <div class="row g-4">
+        <div class="col-sm d-flex" style="margin-left: 25px;">
+            <div class="card shadow-sm flex-fill">
+                <img src="/static/img/index_uslugi.jpg" class="card-img-top" alt="Услуги">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Наши услуги</h5>
+                    <p class="card-text">Мы предлагаем широкий спектр медицинских услуг, от диагностики до лечения. Все для вашего удобства и здоровья.</p><br>
+                    <a href="/services" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm d-flex">
+            <div class="card shadow-sm flex-fill">
+                <img src="/static/img/index_doctors.jpg" class="card-img-top" alt="Врачи">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Наши врачи</h5>
+                    <p class="card-text">В нашем центре работают высококвалифицированные специалисты, готовые помочь вам в любой ситуации.</p><br>
+                    <a href="/doctors" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm d-flex" style="margin-right: 25px;">
+            <div class="card shadow-sm flex-fill">
+                <img src="/static/img/index_priem.jpg" class="card-img-top" alt="Запись на приём">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Запись на приём</h5>
+                    <p class="card-text">Вы можете легко записаться на приём к врачу онлайн, выбрав удобное время. Получать квалифицированную помощь удобно как никогда!</p>
+                    <a href="/appointment" class="btn btn-primary">Записаться</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- Информация о контактных данных -->
+<div class="bg-light py-5">
+    <div class="container text-center">
+        <h2>Контакты</h2>
+        <p>Мы всегда готовы помочь вам! Свяжитесь с нами для получения дополнительной информации.</p>
+        <a href="/contacts" class="btn btn-outline-primary btn-contact">Наши контакты</a>
+    </div>
+</div>
+<br>
+<!-- Раздел с преимуществами -->
+<div class="container py-5">
+    <h2 class="text-center mb-4">Почему выбирают нас?</h2>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="feature-block">
+                <h4><i class="bi bi-clock text-warning"></i> Удобное время записи</h4>
+                <p>Выберите удобное время для приёма, без очередей и лишних ожиданий.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-block">
+                <h4><i class="bi bi-check-circle text-success"></i> Квалифицированные специалисты</h4>
+                <p>Наши врачи – эксперты в своих областях, с многолетним опытом работы.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-block">
+                <h4><i class="bi bi-heart text-danger"></i> Забота о вашем здоровье</h4>
+                <p>Мы следим за каждым пациентом, предлагая персонализированные методы лечения.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endblock %}
